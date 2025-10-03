@@ -1,0 +1,319 @@
+:root {
+    --navcolor: #04ff9fc2;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100vw;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+background-color: rgb(26, 26, 26);
+color: white;
+font-family: 'Trebuchet MS', Helvetica, sans-serif;
+padding-top: 50px;
+margin: 0;
+}
+
+hr {
+    width: 75%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*навбар */
+/* внешний блок navbar, занимает всю ширину */
+.divbg {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/* внутренний блок с контентом navbar */
+.divnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1600px;  
+    margin: 0 auto;     
+    height: 50px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.h3nav {
+    font-style: italic;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease, transform 0.3s  ease;
+}
+
+.nav-link:hover {
+color: var(--navcolor);
+transform: scale(1.1);
+}
+
+#navbar {
+ display: flex;
+ gap: 30px;
+}
+
+.h3nava {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.h3nava:hover {
+ color: var(--navcolor);
+}
+
+/* welcome-section*/
+
+#welcome-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;               
+    align-items: center;         /* вертикальное центрирование */
+    justify-content: space-between; /* текст слева, фото справа */
+}
+
+.h1home {
+    font-size: 50px;         
+}
+
+.mefoto {
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+    border: 15px solid rgb(30, 30, 30);
+    object-fit: cover;
+    margin-right: 10%;
+}
+
+.metext {
+    max-width: 50%;  
+        margin-left: 10%;   
+}
+
+.phome {
+ margin-top: -30px;
+ margin-left: 2px;
+ color: rgb(168, 168, 168);
+}
+
+.abutton {
+    display: flex;             /* flex для центрирования текста */
+    align-items: center;              /* вертикальное центрирование */
+    justify-content: center;          /* горизонтальное центрирование */
+    width: 150px;
+    height: 50px;
+    background-color: var(--navcolor);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.abutton:hover {
+    transform: scale(1.1);
+    background-color: #04bb75c2 ;
+}
+
+/*про меня*/
+.aboutme {
+    width: 100%;
+    height: 75vh;
+       display: flex;
+    flex-direction: column;      /* текст сверху, круги снизу */
+    align-items: center;        
+    justify-content: center; 
+    padding: 50px 20px;         
+    box-sizing: border-box;
+}
+
+.h3aboutme {
+    margin-top: 3% ;
+    text-align: center;
+    font-size: 50px;
+}
+
+#about-section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.paboutme {
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.infomecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+        width: 100%;
+    height: 30%;
+    gap: 70px;
+    padding: 40px 0;
+}
+
+.infome {
+    width: 150px;           /* фиксированная ширина для всех блоков */
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    text-align: center;
+    gap: 10px;   
+}
+
+.infomedec {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(40, 40, 40);
+    border-radius: 50%;
+    display: flex;
+        justify-content: center;
+    align-items: center;
+}
+
+.infomedec2 {
+     width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--navcolor);
+}
+
+.infomename, .infomemail {
+    margin-top: -15px;
+}
+
+/*проекты*/
+
+.myproject {
+    width: 100%;
+       display: flex;
+    flex-direction: column;      
+    align-items: center;        
+    justify-content: center; 
+    padding: 50px 20px;         
+    box-sizing: border-box;
+}
+
+.h3proj {
+    margin-top: 3% ;
+    text-align: center;
+    font-size: 50px;
+}
+
+.proj-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card {
+    text-align: center;
+    border: 15px solid rgb(36, 36, 36);
+    background-color: rgb(36, 36, 36);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+
+    
+  #welcome-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .metext {
+    max-width: 100%;
+    display: block;
+    padding: 15px;
+  }
+
+.h1home {
+  font-size: 32px;
+  margin: 14px 0;
+  padding: 0;
+}
+
+
+  .phome {
+    font-size: 18px;
+  margin-top: -15px;
+  }
+
+  .mefoto {
+   display: none;
+  }
+
+  /* About Me */
+  .aboutme {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .paboutme {
+    font-size: 16px;
+  }
+
+  .infomecontainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Projects */
+  .projects-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0  auto;
+  }
+
+  .proj-img {
+    height: 200px;
+  }
+
+}
