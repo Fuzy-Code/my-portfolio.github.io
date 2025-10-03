@@ -1,5 +1,6 @@
 :root {
     --navcolor: #04ff9fc2;
+    --cartebg: rgb(36, 36, 36)
 }
 
 * {
@@ -27,6 +28,12 @@ hr {
 a {
     text-decoration: none;
     color: white;
+}
+
+.h3title {
+    margin-top: 3% ;
+    text-align: center;
+    font-size: 50px;
 }
 
 
@@ -147,11 +154,6 @@ transform: scale(1.1);
     box-sizing: border-box;
 }
 
-.h3aboutme {
-    margin-top: 3% ;
-    text-align: center;
-    font-size: 50px;
-}
 
 #about-section {
     display: flex;
@@ -218,11 +220,6 @@ transform: scale(1.1);
     box-sizing: border-box;
 }
 
-.h3proj {
-    margin-top: 3% ;
-    text-align: center;
-    font-size: 50px;
-}
 
 .proj-img {
     width: 100%;
@@ -232,8 +229,8 @@ transform: scale(1.1);
 
 .card {
     text-align: center;
-    border: 15px solid rgb(36, 36, 36);
-    background-color: rgb(36, 36, 36);
+    border: 15px solid var(--cartebg);
+    background-color: var(--cartebg);
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -250,6 +247,32 @@ transform: scale(1.1);
     gap: 30px;
     margin-top: 30px;
 }
+
+/*certificate"*/
+
+.certificate1 {
+    text-align: center;
+    border: 15px solid var(--cartebg); 
+    background-color: var(--cartebg);  
+    border-radius: 10px;
+    max-width: 600px;                
+    margin: 20px auto;               
+    padding: 20px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.certificate1:hover {
+    transform: scale(1.05); /* легкий эффект при наведении */
+}
+
+.imgcertificate1 {
+    width: 100%;  
+    height: auto;
+    object-fit: cover;
+}
+
+
 
 
 @media screen and (max-width: 768px) {
@@ -307,9 +330,12 @@ transform: scale(1.1);
     gap: 20px;
   }
 
-  .card {
+  .card, .certificate1 {
     width: 90%;
     margin: 0  auto;
+  }
+  .certificate1 {
+    margin-bottom: 15px;
   }
 
   .proj-img {
