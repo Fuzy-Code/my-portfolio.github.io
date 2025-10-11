@@ -17,9 +17,23 @@ body {
 background-color: rgb(26, 26, 26);
 color: white;
 font-family: 'Trebuchet MS', Helvetica, sans-serif;
-padding-top: 50px;
 margin: 0;
 }
+
+main {
+    opacity: 0;
+transform: translateY(20px);
+animation: show  2s ease forwards;
+}
+
+@keyframes show {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 hr {
     width: 75%;
@@ -68,6 +82,7 @@ a {
     text-decoration: none;
     color: white;
     transition: color 0.3s ease, transform 0.3s  ease;
+    font-weight: 700;
 }
 
 .nav-link:hover {
@@ -100,17 +115,101 @@ transform: scale(1.1);
     justify-content: space-between; /* текст слева, фото справа */
 }
 
-.h1home {
-    font-size: 50px;         
+.pwelcome {
+  font-size: 25px;
 }
 
+.fuzy {
+    color: var(--navcolor);
+}
+
+.h2home {
+    margin-top: -20px;
+    font-size: 50px;
+     vertical-align: middle; 
+}
+
+.typping1 {
+    color: white;
+}
+
+.typping {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--navcolor);
+    border-right: 2px solid var(--navcolor);
+    width: 6ch;
+    animation: typing 1s steps(20) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 4ch; }
+    to   { width: 12ch; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+
+
 .mefoto {
-    width: 30%;
-    height: auto;
-    border-radius: 50%;
-    border: 15px solid rgb(30, 30, 30);
-    object-fit: cover;
-    margin-right: 10%;
+  width: 30%;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid var(--navcolor);
+  object-fit: cover;
+  margin-right: 10%;
+  box-shadow: 0 0 20px 1px var(--navcolor);
+  animation: float 10s ease infinite;
+  transition: box-shadow 0.3s ease;
+}
+
+.mefoto:hover {
+  box-shadow: 0 0 50px 1px rgba(4, 255, 159, 0.6);
+}
+
+@keyframes float {
+  0%, 50%, 100% { transform: translateY(15px); }
+  25%, 75% { transform: translateY(-15px); }
+}
+
+.socials {
+    display: flex;
+        align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+.socialspan {
+  background: var(--cartebg);
+  border: 2px solid var(--cartebg);
+  border-radius: 50%;
+  width: 50px;         /* фиксируем размеры кружка */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.asocials i {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.asocials {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.asocials:hover {
+    transform: scale(1.1);
+    color: var(--navcolor);
 }
 
 .metext {
@@ -119,9 +218,16 @@ transform: scale(1.1);
 }
 
 .phome {
+    width: 400px;
  margin-top: -30px;
  margin-left: 2px;
  color: rgb(168, 168, 168);
+}
+
+.abuttondiv {
+    display: flex;
+    gap: 30px;
+    font-weight: 700;
 }
 
 .abutton {
@@ -133,19 +239,40 @@ transform: scale(1.1);
     background-color: var(--navcolor);
     color: white;
     text-decoration: none;
-    border-radius: 20px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 7px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
 .abutton:hover {
-    transform: scale(1.1);
-    background-color: #04bb75c2 ;
+    transform: scale(1.05);
+    background-color: transparent;
+    color: var(--navcolor);
+    border: 2px solid var(--navcolor);
+}
+
+
+.abutton1 {
+    display: flex;           
+    align-items: center;              
+    justify-content: center;         
+    width: 150px;
+    height: 50px;
+    border: 2px solid var(--navcolor);
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.abutton1:hover {
+    transform: scale(1.05);
+    background-color: var(--navcolor) ;
 }
 
 /*про меня*/
 .aboutme {
     width: 100%;
-    height: 75vh;
+    height: auto;
        display: flex;
     flex-direction: column;      /* текст сверху, круги снизу */
     align-items: center;        
@@ -165,6 +292,7 @@ transform: scale(1.1);
 .paboutme {
     max-width: 800px;
     line-height: 1.6;
+    font-size: 20px;
 }
 
 .infomecontainer {
@@ -176,6 +304,7 @@ transform: scale(1.1);
     height: 30%;
     gap: 70px;
     padding: 40px 0;
+    font-size: 17px;
 }
 
 .infome {
@@ -228,17 +357,35 @@ transform: scale(1.1);
 }
 
 .card {
+    padding: 10px 10px 25px 10px;
     text-align: center;
-    border: 15px solid var(--cartebg);
     background-color: var(--cartebg);
     border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--navcolor);
 }
+
+.pview {       
+    display: inline-block;
+    padding: 7px 30px;
+    background-color: var(--navcolor);
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    border: 2px solid var(--navcolor);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card:hover .pview {
+    background-color: transparent; /* фон исчезает */
+    color: var(--navcolor);        /* цвет текста меняется */
+}
+
 
 .projects-container {
     display: flex;
@@ -252,26 +399,27 @@ transform: scale(1.1);
 
 .certificate1 {
     text-align: center;
-    border: 15px solid var(--cartebg); 
+    padding: 15px;
     background-color: var(--cartebg);  
     border-radius: 10px;
     max-width: 600px;                
     margin: 20px auto;               
     padding: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .certificate1:hover {
-    transform: scale(1.05); /* легкий эффект при наведении */
+    transform: scale(1.05); 
+    box-shadow: 0 0 15px var(--navcolor);
 }
+
 
 .imgcertificate1 {
     width: 100%;  
     height: auto;
     object-fit: cover;
 }
-
 
 
 
@@ -285,15 +433,16 @@ transform: scale(1.1);
     align-items: center;
     text-align: center;
     padding: 20px;
+    margin: 0 auto;
   }
 
   .metext {
     max-width: 100%;
     display: block;
-    padding: 15px;
+    margin: 0 auto;
   }
 
-.h1home {
+.h2home {
   font-size: 32px;
   margin: 14px 0;
   padding: 0;
@@ -302,14 +451,27 @@ transform: scale(1.1);
 
   .phome {
     font-size: 18px;
-  margin-top: -15px;
+  max-width: 250px;
+  margin: 0 auto;
+  padding-bottom: 15px;
   }
 
   .mefoto {
    display: none;
   }
 
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
   /* About Me */
+.divpadding {
+    padding-top: 50px;
+}
+
   .aboutme {
     min-height: auto;
     padding: 20px;
